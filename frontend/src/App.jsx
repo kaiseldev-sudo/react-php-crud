@@ -21,6 +21,7 @@ function App() {
       const res = await axios.get(`${apiURL}fetch`);
       user.current = res.data;
       setUsers(user.current);
+      console.log(`Users: ${user.current}`);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -28,7 +29,7 @@ function App() {
 
   const del = async (id) => {
     try {
-      const res = await axios.delete(`${apiURL}delete`, { data: { userId: id } });
+      const res = await axios.delete(`${apiURL}delete`, { data: { uuid: id } });
       if (res.data.type === 'success') {
         alert(res.data.message);
         fetchData();

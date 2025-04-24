@@ -1,5 +1,6 @@
 <?php
 // Allow requests from your React app (localhost:5173)
+// CORS (Cross-Origin Resource Sharing) headers to allow requests x` the React app
 header("Access-Control-Allow-Origin: http://localhost:5173");
 header("Access-Control-Allow-Credentials: true");
 header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");

@@ -6,6 +6,12 @@
 
     $res = ['error' => false];
     $action = isset($_GET['action']) ? $_GET['action'] : '';
+
+    // insert
+    // delete
+    // fetch
+    // update
+    
     switch($action) {
         case 'fetch':
             fetchData();
@@ -50,8 +56,8 @@
 
         $data = json_decode(file_get_contents('php://input'), true);
 
-        if(isset($data['userId'])) {
-            $uid = $data['userId'];
+        if(isset($data['uuid'])) {
+            $uid = $data['uuid'];
 
             $stmt = $connect->prepare("DELETE FROM users WHERE uid = ?");
             $stmt->bind_param('i', $uid);
